@@ -1,6 +1,7 @@
 require("dotenv").config();
 const axios = require("axios");
 const qs = require("qs");
+const { apiDao } = require("../models");
 
 const getApi = async (page,  perPage) => {
     const response = await axios.get(
@@ -15,7 +16,9 @@ const getApi = async (page,  perPage) => {
             }
         }
     );
-    return response.data;
+    const data = response.data;
+    const result = await apiDao.getRedis(data);
+    return result;
 }
 
 module.exports = {
