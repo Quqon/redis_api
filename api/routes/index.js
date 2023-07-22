@@ -1,6 +1,6 @@
 const express = require("express");
 
-const apiRouter = require("./router");
+const apiRouter = require("./apiRouter");
 
 const router = express.Router();
 

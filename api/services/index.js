@@ -1,5 +1,5 @@
-const Service = require('./service');
+const apiService = require('./apiService');
 
 module.exports = {
-    Service,
+    apiService,
 };

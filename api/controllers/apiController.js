@@ -1,8 +1,8 @@
-const {service} = require("../services");
+const {apiService} = require("../services");
 
 const getApi = async (req, res) => {
     const {page, perPage} = req.query;
-    const result = await service.getApi(page, perPage);
+    const result = await apiService.getApi(page, perPage);
     return res.status(200).json({message: "success", result});
 };
 
